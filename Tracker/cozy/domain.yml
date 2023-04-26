@@ -1,0 +1,90 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - define_period
+  - period_hygiene
+  - reason_period
+  - problem_period
+  - skip_period
+  - tampon
+  - period_last
+  - period_pregnant
+  - period_cramp
+  - period_apetite
+  - period_pms
+  - period_pregnant2
+  - period_blood
+  - period_stop
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+  utter_define_period:
+  - text: "Menstruation Period is normal vaginal bleeding that occurs as part of a woman's monthly cycle"
+  
+  utter_period_hygiene:
+  - text: "Always choose sanitary products with an absorbency level that's appropriate for your menstrual flow. Changing these products less frequently than once in four to eight hours (four hours for pads and four to eight hours for tampons) may lead to bacterial growth and infections"
+  
+  utter_reason_period:
+  - text: "A period happens because of changes in hormones in the body"
+  
+  utter_problem_period:
+  - text: "Pain that you get with your menstrual period is called dysmenorrhea (dis-men-uh-REE-uh). Pain is the most common problem women have with their periods. More than half of women who have periods get some pain around their period. Some women may get just a feeling of heaviness in the abdomen or tugging in the pelvic area"
+
+  utter_skip_period:
+  - text: "Relax. It's normal for your period not to be normal -- especially in the first few years after starting your period . Stress, exercise, and sickness can all cause you to miss one."
+
+  utter_tampon:
+  - text: "Tampons rarely cause infections leading to TSS. To lower your chances of getting the infection, change your tampon every 4 hours or so."
+  
+  utter_period_last:
+  - text: "For most women, it goes on for 3 to 5 days. If that’s not you, don’t worry. One can last as few as 2 days of as many as 7. If you're bleeding more than 7 days in a row, talk to your doctor."
+  
+  utter_period_pregnant:
+  - text: "You can get pregnant at any time, even when you're bleeding. If you don't want that, talk to your doctor about using some type of birth contro."
+  
+  utter_period_cramp:
+  - text: "Try a pain reliever like acetaminophen, ibuprofen, or naproxen. You can also use a heating pad on your lower back or stomach. Increasing hydration and avoiding caffeine can help."
+  
+  utter_period_apetite:
+  - text: "When it comes, your body can hold in water and make you feel bloated. When your jeans feel a little tight, cut the salt in your diet and skip the caffeine. It can also help to stay active."
+  
+  utter_period_pms:
+  - text: "You may want to exercise, skip salty foods, and cut back on caffeine the week before your period. If your mood is still tricky, talk to your doctor."
+  
+  utter_period_pregnant2:
+  - text: "Not always. Sometimes women can still bleed early in their pregnancy. If the bleeding doesn't seem like a regular period, or if you're nauseated or tired, you may want to see your doctor or take a pregnancy test."
+  
+  utter_period_blood:
+  - text: "Most girls lose about 1/4 cup of menstrual fluid during their periods (mostly in the first few days). Not to worry, though — your body makes up for it."
+  
+  utter_period_stop:
+  - text: "Women get periods until menopause, it usually happens in their late 40sor early 50s. But menopause can happen earlier or later."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

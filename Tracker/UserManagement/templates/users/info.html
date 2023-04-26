@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en' dir="ltr">
+    <head>
+        <meta charset="utf8">
+        <title>Info</title>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    </head>
+
+
+    <body>
+
+        <div class = message>
+            {% if messages %}
+                        {% for message in messages%}
+                        <div class="alert alert-info">
+                            {{ message }}
+                        {% endfor %}
+                    {% endif %}
+                        </div>
+            </div>
+
+        <div class="center1">
+            <h1>User Information</h1>
+
+            <form action='/info/' method='post'>
+
+                {% csrf_token %}
+
+                <div class="txt_field">
+                    <input type="text" id="name" name="name" required>
+                     {% comment %} {{ form.name }} {% endcomment %}
+                    <span></span>
+                    <label>Name</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="number" min="0" id="age" name="age" required>
+                     {% comment %} {{ form.age }} {% endcomment %}
+                    <span></span>
+                    <label>No of Birth Given</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="number" min="0" id="days" name="days" required>
+                     {{ form.days }}
+                    <span></span>
+                    <label>Length of Period days</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="number"  min="10" id="cycle" name="cycle" required>
+                     {{ form.cycle }}
+                    <span></span>
+                    <label>Length of Period cycle</label>
+                </div>
+
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+
+    </body>
+
+</html>

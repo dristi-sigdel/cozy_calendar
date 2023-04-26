@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang='en' dir="ltr">
+    <head>
+        <meta charset="utf8">
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+
+    <body>
+
+        <div class = message>
+            {% if messages %}
+                        {% for message in messages%}
+                        <div class="alert alert-info">
+                            {{ message }}
+                        {% endfor %}
+                    {% endif %}
+                        </div>
+            </div>
+
+        <div class="center">
+            <h1>Login</h1>
+
+            <form action = '/login/' method='POST'>
+
+                {% csrf_token %}
+
+                <div class="txt_field">
+                    <input type="text" id="loginusername" name="loginusername" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="password" id="loginpassword" name="loginpassword" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+
+                <!-- <div class="pass">Forgot Password</div> -->
+                <input type="submit" value="Login">
+
+                <div class="signup_link">
+                    Not a Member? <a href="{% url 'register' %}">Signup</a>
+                </div>
+            </form>
+        </div>
+
+        {% comment %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <strong>Message: </strong> {{ message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>{% endfor %} {% endcomment %}
+
+
+{#    <div class="alert alert-warning alert-dismissible fade show" role="alert">#}
+{#  <strong>Holy guacamole!</strong> You should check in on some of those fields below.#}
+{#  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>#}
+{#</div>#}
+
+    </body>
+
+</html>

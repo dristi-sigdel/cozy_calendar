@@ -1,0 +1,318 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cozy Calendar</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/fabicon.png' %}" rel="icon">
+  <link href="{% static 'img/fabicon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: TheEvent - v4.7.0
+  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-row-reverse ">
+{#    <div class="container-fluid container-xxl d-flex align-items-center">#}
+
+{#      <div class="d-flex flex-row">#}
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul class="d-flex">
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li> -->
+            <li><a class="nav-link scrollto" href="#tracking">Tracking</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+{#          <li><a class="nav-link scrollto" href="{% url 'register' %}">Signup</a></li>#}
+            <a class="buy-tickets scrollto" href="/logout">Logout</a>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+      </nav><!-- .navbar -->
+
+      <div id="logo" class="me-auto">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
+          <a href="{% url 'home' %}" class="scrollto"><img src="{% static 'img/logo.png' %}" alt="" title=""></a>
+
+     </div>
+{#           </div>#}
+{#    </div>#}
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0"><span>Cozy Calendar</span><br>Menstrual Period Tracker</h1>
+      <p class="mb-4 pb-0">Tracks the Menstrual Period Cycle in Women</p>
+      <a href="#about" class="about-btn scrollto">Explore</a>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>About Cozy Calendar</h2>
+            <p>Cozy Calendar is the menstrual period tracking application. That predicts or tracks the next menstrual period in Women
+              through the data inserted by women. It analyses those data and gives the result as the predicted next period.
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <h3>Why Cozy Calendar</h3>
+            <p>Many users are very attracted to the cozy calendar as it predicts the accurate period.</p>
+          </div>
+{#          <div class="col-lg-3">#}
+{#            <h3>When</h3>#}
+{#            <p>Monday to Wednesday<br>10-12 December</p>#}
+{#          </div>#}
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+      <!-- ======= Tracking Section ======= -->
+      {% block content %}
+      <section id="tracking">
+      <div class="tracking-container" >
+        <h1 class="mb-4 pb-0"> Menstruation Period in {{data}} days</h1>
+        {% endblock %}
+      </div>
+    </section><!-- End Tracking Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Do contact us for more! </p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>Bhagwari Bahal Mandir Road, Naxal, Nepal</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+977 01 256825">+977 01 256825</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+ <!-- ======= Chat bot ======= -->
+{#<div id="bot">#}
+{##}
+{#    <div><input id="input" type="text" placeholder="Write something..." autocomplete="off"  autofocus="true"/></div>#}
+{##}
+{#</div>#}
+{##}
+
+
+{% comment %} <button id="myBtn" >
+    <img src="{% static 'img/chat.svg' %}" style="width: 50px; height: 50px; border-radius: 70%; position: fixed; right:15px; bottom: 60px;">
+</button> {% endcomment %}
+
+{#<button id="myBtn">#}
+{#    <img src="{% static 'assets/img/chat.svg' %}" style="width: 5px; height: 50px; border-radius: 70%; position: fixed; right:10px; bottom: 10px;">#}
+{#  </button>#}
+
+  {% comment %} <div id="myModal" class="modal"> {% endcomment %}
+
+    <!-- Modal content -->
+    {% comment %} <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Ask any Question..</p>
+        <div class="bot">
+      <div class="chat-bar-input-block">
+            <div id="userInput">
+              <input type="text" id="textInput" class="input-box" name="msg" placeholder="Type the message">
+                <input type="submit" value="Send">
+                <p></p>
+            </div>
+          </div>
+    </div>
+  </div>
+  </div>  {% endcomment %}
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <img src="{% static 'img/logo.png' %}" alt="Cozy Calendar">
+            <p>Cozy Calender assures you to provide great help on tracking your period. Hope you like our service to track your period.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Bhagwati Bahal Mandir Road <br>
+              Naxal, Kathmandu<br>
+              Nepal <br>
+              <strong>Phone:</strong> +977 01 256825<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Cozy Calendar</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+      -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  {% comment %} <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> {% endcomment %}
+
+<style>
+  .rw-conversation-container .rw-header{background-color: #f82249;}
+  .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: #f82249;}
+  .rw-launcher{background-color: #f82249} 
+</style>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/bot.js' %}"></script>
+
+  <script src="{% static 'js/rasa.js' %}"></script>
+
+
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+{# <!-- ALL JS FILES -->#}
+{#	<script src="{% static 'jss/jquery-3.2.1.min.js' %}"></script>#}
+{#	<script src="{% static 'jss/popper.min.js' %}"></script>#}
+{#	<script src="{% static 'jss/jbootstrap.min.s' %}"></script>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>#}
+
+{#{% endblock %}#}
+</body>
+
+</html>

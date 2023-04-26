@@ -1,0 +1,61 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: period 1
+  steps:
+  - intent: define_period
+  - action: utter_define_period
+  - intent: period_hygiene
+  - action: utter_period_hygiene
+  - intent: reason_period
+  - action: utter_reason_period
+  - intent: problem_period
+  - action: utter_problem_period
+  - intent: skip_period
+  - action: utter_skip_period
+  - intent: tampon
+  - action: utter_tampon
+  - intent: period_last
+  - action: utter_period_last
+  - intent: period_pregnant
+  - action: utter_period_pregnant
+  - intent: period_cramp
+  - action: utter_period_cramp
+  - intent: period_apetite
+  - action: utter_period_apetite
+  - intent: period_pms
+  - action: utter_period_pms
+  - intent: period_pregnant2
+  - action: utter_period_pregnant2
+  - intent: period_blood
+  - action: utter_period_blood
+  - intent: period_stop
+  - action: utter_period_stop

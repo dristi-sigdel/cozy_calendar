@@ -1,0 +1,170 @@
+version: "2.0"
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - hlo
+    - yo
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+- intent: define_period
+  examples: |
+    - what is period?
+    - what is menstruation?
+    - what is menstruation period?
+    - define menstruation period
+
+- intent: period_hygiene
+  examples: |
+    - what is period hygiene?
+    - what are the tips for period hygiene?
+    - what are the tips for menstraution period hygiene?
+    - what is menstruation period hygiene?
+
+- intent: reason_period
+  examples: |
+    - what are reason behind period?
+    - what are reason behind menstruation?
+    
+- intent: problem_period
+  examples: |
+    - what are period pain?
+    - what are pain in menstruating?
+    
+- intent: skip_period
+  examples: |
+    - what if I skip a period?
+    - Is skipping a period bad?
+    - why do I skip my period?
+    
+- intent: tampon
+  examples: |
+    - Do Tampons Cause Toxic Shock Syndrome?
+    
+- intent: period_last
+  examples: |
+    - How Long Should My Period Last?
+    - how long should one bleed during period?
+    
+- intent: period_pregnant
+  examples: |
+    - Can I Get Pregnant During My Period?
+    - can one get pregnant during menstruation period?
+    
+- intent: period_cramp
+  examples: |
+    - How Do I Get Rid of Cramps?
+    - What can I do to get rid of period cramps?
+    - tips for getting rid of period cramps
+    
+- intent: period_apetite
+  examples: |
+    - Why Do I Feel So Full During My Period?
+    - why do I lose my apetitte during my period?
+    
+- intent: period_pms
+  examples: |
+    - How Can I Control PMS Symptoms?
+    - tips to control PMS
+    
+- intent: period_pregnant2
+  examples: |
+    - A Period Means I'm Not Pregnant, Right?
+    - am I pregnant while i am menstruating?
+    
+- intent: period_blood
+  examples: |
+    - How much blood do I lose during my period?
+    - how much blood is lost during a period?
+    
+- intent: period_stop
+  examples: |
+    - When will I stop having my period for good?
+    - when will one stop bleeding forever?
+    
