@@ -20,8 +20,3 @@ class Profile(models.Model):
 
 class Hello(models.Model):
     name = models.CharField(max_length=50)
-
-# class UserProfile(models.Model):
-    # user = models.OneToOneField(User, null=True, on_delete=models.cascade)
-    # name = models.CharField()
-    # cycle = models.PositiveBigIntegerField()

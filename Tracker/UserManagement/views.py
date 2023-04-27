@@ -82,33 +82,11 @@ def register(request):
 
         myuser = User.objects.create_user(username, email, password1)
         myuser.save()
-
-            # auth_token = str(uuid.uuid4())
-            # profile_obj = Profile.objects.create(user = myuser, auth_token = auth_token )
-            # profile_obj.save()
-            # send_mail_after_registration(email, auth_token)
-            # return redirect('/token')
         messages.success(request, "Registered Successfully!")
         return redirect('/info')
 
-        # except Exception as e:
-            # print(e)
-            
-        # messages.success(request, "Successfully Registered!")
     else:
         return render(request, 'users/register.html')
-
-    # else:
-        #   return HttpResponse('404 - Not Found')
-        
-
-    
-# def send_mail_after_registration(email, token):
-#     subject = 'Your accounts need to be verified'
-#     message = f'Hi paste the link to verify your account http://127.0.0.1:8000/verify/{token}'
-#     email_from = settings.EMAIL_HOST_USER
-#     recepient_list = [email]
-#     send_mail(subject, message, email_from, recepient_list)
 
 
 def login(request):
@@ -145,18 +123,6 @@ def info(request):
         cycle = request.POST['cycle']
         print(name, age, days, cycle)
 
-        # if User.objects.filter(age):
-        #     messages.error(request, "Should have 0 or more.")
-        #     return redirect('/info')
-
-        # if User.objects.filter(days):
-        #     messages.error(request, "Should have 0 or more.")
-        #     return redirect('/info')
-
-        # if User.objects.filter(cycle):
-        #     messages.error(request, "Should have 10 or more.")
-        #     return redirect('/info')
-
         inf = Info(name=name, age=age, days=days, cycle=cycle)
         # print("Hey!")
         inf.save()
@@ -171,9 +137,6 @@ def info(request):
         print(LengthofLutealPhase)
         
 
-        # filename = 'model.joblib'
-        # track = joblib.load(filename)
-
         track = pickle.load(open('regr.pkl', 'rb'))
         # print(track)
 
@@ -183,97 +146,19 @@ def info(request):
                   "FirstDayofHigh": FirstDayofHigh,
                   "TotalNumberofHighDays": TotalNumberofHighDays}, index=[0])
 
-        # print(df)
-        
-
-        # arr = []
-
-        # arr.append(CycleNumber)
-        # arr.append(LengthofLutealPhase)
-        # arr.append(FirstDayofHigh)
-        # arr.append(TotalNumberofHighDays)
-        # arr.append(age)
-        
-        # df = pd.DataFrame({"CycleNumber":CycleNumber,
-        #           "ReproductiveCategory": age,
-        #           "LengthofLutealPhase": LengthofLutealPhase,
-        #           "FirstDayofHigh": FirstDayofHigh,
-        #           "TotalNumberofHighDays": TotalNumberofHighDays}, index=[0])
-
-        # print(df)
-        # result = 29
-        # print(result)
-                  
-
-        # arr = [CycleNumber, LengthofLutealPhase, FirstDayofHigh, TotalNumberofHighDays, age]
-        # arr = np.array(arr)
-        # print(arr)
-        # arr = arr.reshape(1,-1)
         y_pred = track.predict(df)
         prediction = math.floor(y_pred)
         # print(prediction)
         data=prediction
-        # print(y_pred)
 
-        # output = """Menstruation Period in {{prediction}}days"""
-        # template =  Template(output)
-        # result = template.render
-        # return HttpResponse(result)
 
         # return redirect('/index', {'data': data}) 
         return render(request, 'users/index.html', {'data': data})
-        # return redirect("/index", {'data':data})
-        # return render(request, 'users/index.html')
+
     else:
         return render(request, 'users/info.html')
         # messages.error(request, "Invalid Credentials, Please Try Again!")
 
-
-# def info(request):
-#     my_form = InfoForm(request.GET)
-#     if request.method == "POST":
-#         my_form = InfoForm(request.POST)
-#         if my_form.is_valid():
-#             Info.objects.create(**my_form.cleaned_data)
-#             return redirect("/index")
-
-#     context = {"form": my_form}
-#     return render(request, "users/info.html", context)
-
-# def tracker(request):
-
-#     if request.method == 'POST':
-
-#         name = request.POST.get['name']
-#         age = request.POST.get['age']
-#         days = request.POST.get['days']
-#         cycle = request.POST.get['cycle']
-
-#         CycleNumber = 1
-#         LengthofLutealPhase = math.floor((50/100)*cycle)
-#         FirstDayofHigh = math.ceil((36/100)*cycle)
-#         TotalNumberofHighDays = math.floor((14/100)*cycle)
-#         print(LengthofLutealPhase)
-
-#         filename = 'model.joblib'
-#         track = joblib.load(filename)
-
-
-#         # def functions():
-#         #     data = request.POST.get('cycle')
-            
-#         #     return (CycleNumber, LengthofLutealPhase, FirstDayofHigh, TotalNumberofHighDays)
-
-#         # track = pickle.load(open('UserManagement/static/ml/regr.pkl', 'rb'))
-
-#         y_pred = track.predict([CycleNumber, LengthofLutealPhase, FirstDayofHigh, TotalNumberofHighDays, age])
-#         print(y_pred)
-#         return render(request, 'index.html', {'result': 29})
-        # fs = FileSystemStorage()
-        # filename = fs.save()
-
-
-        # return render(request, 'index.html')
 def profile(request):
     info = Info.objects.all()
     return render(request, "users/Profile.html", {'info':info})
